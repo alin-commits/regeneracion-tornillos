@@ -13,33 +13,55 @@
 <body>
 <!-- NAV -->
 <nav>
-  <a class="logo" href="https://cstiberica.es/" aria-label="Ir al inicio">
-  <img src="img/isotipo_mono.svg" alt="CST Iberica logotipo">
+  <a class="logo" href="https://www.cstiberica.es" aria-label="Ir al inicio">
+    <img src="img/isotipo_mono.svg" alt="CST Iberica logotipo">
   </a>
-<ul class="nav-links">
-  <li><a href="#why">Beneficios</a></li>
 
+  <ul class="nav-links">
+    <li><a href="#why">Beneficios</a></li>
+    <li><a href="#process">Proceso</a></li>
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#contact">Contacto</a></li>
 
+    <li class="nav-dropdown">
+      <a href="#services" class="dropdown-toggle">
+        Otros servicios
+        <span class="dropdown-arrow">▾</span>
+      </a>
 
-  <li><a href="#process">Proceso</a></li>
-  <li><a href="#services">Servicios</a></li>
-  <li><a href="#contact">Contacto</a></li>
-    
-  <li class="nav-dropdown">
-    <a href="#services" class="dropdown-toggle">
-      Otros servicios
-      <span class="dropdown-arrow">▾</span>
-    </a>
+      <ul class="dropdown-menu">
+        <li><a href="https://cstiberica.es/servicio-tecnico-de-aire-comprimido-24-7/">SAT 24/7</a></li>
+        <li><a href="https://cstiberica.es/mantenimiento-de-aire-comprimido/">Mantenimiento</a></li>
+        <li><a href="https://cstiberica.es/instalacion-de-aire-comprimido/">Instalaciones</a></li>
+        <li><a href="https://cstiberica.es/auditoria-de-aire-comprimido-industrial/">Auditorías</a></li>
+      </ul>
+    </li>
+  </ul>
 
-    <ul class="dropdown-menu">
-      <li><a href="https://cstiberica.es/servicio-tecnico-de-aire-comprimido-24-7/">SAT 24/7</a></li>
-      <li><a href="https://cstiberica.es/mantenimiento-de-aire-comprimido/">Mantenimiento</a></li>
-      <li><a href="https://cstiberica.es/instalacion-de-aire-comprimido/">Instalaciones</a></li>
-      <li><a href="https://cstiberica.es/auditoria-de-aire-comprimido-industrial/">Auditorías</a></li>
-    </ul>
-  </li>
-</ul>
   <a class="nav-cta" href="#contact">Solicitar Presupuesto</a>
+
+  <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why">Beneficios</a>
+    <a href="#process">Proceso</a>
+    <a href="#services">Servicios</a>
+    <a href="#contact">Contacto</a>
+
+    <div class="mobile-menu-group">
+      <span>Otros servicios</span>
+      <a href="https://cstiberica.es/servicio-tecnico-de-aire-comprimido-24-7/">SAT 24/7</a>
+      <a href="https://cstiberica.es/mantenimiento-de-aire-comprimido/">Mantenimiento</a>
+      <a href="https://cstiberica.es/instalacion-de-aire-comprimido/">Instalaciones</a>
+      <a href="https://cstiberica.es/auditoria-de-aire-comprimido-industrial/">Auditorías</a>
+    </div>
+
+    <a class="mobile-menu-cta" href="#contact">Solicitar Presupuesto</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -446,78 +468,145 @@
 </footer>
 
 <script>
-  /* Scroll reveal */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+  document.addEventListener('DOMContentLoaded', function () {
+    /* Scroll reveal */
+    const revealElements = document.querySelectorAll('.reveal');
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    if (revealElements.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
 
-  /* Validación avanzada del formulario */
-  const contactForm = document.getElementById('contactForm');
-  const formError = document.getElementById('formError');
+      revealElements.forEach((el) => observer.observe(el));
+    }
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      const nombre = document.getElementById('nombre').value.trim();
-      const empresa = document.getElementById('empresa').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const compresor = document.getElementById('compresor').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
+    /* Mobile menu */
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-      const phoneRegex = /^(\+34\s?)?[6-9][0-9\s]{8,14}$/;
+    function closeMobileMenu() {
+      if (!mobileMenuBtn || !mobileMenu) return;
 
-      formError.textContent = '';
+      mobileMenuBtn.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      mobileMenuBtn.setAttribute('aria-label', 'Abrir menú');
+    }
 
-      if (!nombre || !empresa || !email || !telefono || !compresor || !mensaje) {
-        e.preventDefault();
-        formError.textContent = 'Por favor, complete todos los campos antes de enviar.';
-        return;
-      }
+    function toggleMobileMenu() {
+      if (!mobileMenuBtn || !mobileMenu) return;
 
-      if (nombre.length < 3) {
-        e.preventDefault();
-        formError.textContent = 'Introduzca un nombre válido.';
-        return;
-      }
+      const isOpen = mobileMenu.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+      mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    }
 
-      if (empresa.length < 2) {
-        e.preventDefault();
-        formError.textContent = 'Introduzca una empresa válida.';
-        return;
-      }
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
-      if (!emailRegex.test(email)) {
-        e.preventDefault();
-        formError.textContent = 'Introduzca un correo electrónico válido.';
-        return;
-      }
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+      });
 
-      if (!phoneRegex.test(telefono)) {
-        e.preventDefault();
-        formError.textContent = 'Introduzca un teléfono válido. Ejemplo: 612345678 o +34 612345678.';
-        return;
-      }
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1024) {
+          closeMobileMenu();
+        }
+      });
 
-      if (compresor.length < 2) {
-        e.preventDefault();
-        formError.textContent = 'Introduzca la marca y modelo del compresor.';
-        return;
-      }
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+    }
 
-      if (mensaje.length < 10) {
-        e.preventDefault();
-        formError.textContent = 'Describa brevemente el problema con al menos 10 caracteres.';
-        return;
-      }
-    });
-  }
+    /* Validación avanzada del formulario */
+    const contactForm = document.getElementById('contactForm');
+    const formError = document.getElementById('formError');
+
+    if (contactForm && formError) {
+      contactForm.addEventListener('submit', function (e) {
+        const nombre = document.getElementById('nombre');
+        const empresa = document.getElementById('empresa');
+        const email = document.getElementById('email');
+        const telefono = document.getElementById('telefono');
+        const compresor = document.getElementById('compresor');
+        const mensaje = document.getElementById('mensaje');
+
+        if (!nombre || !empresa || !email || !telefono || !compresor || !mensaje) {
+          e.preventDefault();
+          formError.textContent = 'Hay un problema con el formulario. Revise los campos.';
+          return;
+        }
+
+        const nombreValue = nombre.value.trim();
+        const empresaValue = empresa.value.trim();
+        const emailValue = email.value.trim();
+        const telefonoValue = telefono.value.trim();
+        const compresorValue = compresor.value.trim();
+        const mensajeValue = mensaje.value.trim();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        const phoneRegex = /^(\+34\s?)?[6-9][0-9\s]{8,14}$/;
+
+        formError.textContent = '';
+
+        if (!nombreValue || !empresaValue || !emailValue || !telefonoValue || !compresorValue || !mensajeValue) {
+          e.preventDefault();
+          formError.textContent = 'Por favor, complete todos los campos antes de enviar.';
+          return;
+        }
+
+        if (nombreValue.length < 3) {
+          e.preventDefault();
+          formError.textContent = 'Introduzca un nombre válido.';
+          nombre.focus();
+          return;
+        }
+
+        if (empresaValue.length < 2) {
+          e.preventDefault();
+          formError.textContent = 'Introduzca una empresa válida.';
+          empresa.focus();
+          return;
+        }
+
+        if (!emailRegex.test(emailValue)) {
+          e.preventDefault();
+          formError.textContent = 'Introduzca un correo electrónico válido.';
+          email.focus();
+          return;
+        }
+
+        if (!phoneRegex.test(telefonoValue)) {
+          e.preventDefault();
+          formError.textContent = 'Introduzca un teléfono válido. Ejemplo: 612345678 o +34 612345678.';
+          telefono.focus();
+          return;
+        }
+
+        if (compresorValue.length < 2) {
+          e.preventDefault();
+          formError.textContent = 'Introduzca la marca y modelo del compresor.';
+          compresor.focus();
+          return;
+        }
+
+        if (mensajeValue.length < 10) {
+          e.preventDefault();
+          formError.textContent = 'Describa brevemente el problema con al menos 10 caracteres.';
+          mensaje.focus();
+          return;
+        }
+      });
+    }
+  });
 </script>
 </body>
 </html>
