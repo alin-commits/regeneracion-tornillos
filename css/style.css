@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -91,13 +93,13 @@ nav {
   list-style: none;
 }
 
-.nav-links > li {
+.nav-links>li {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.nav-links > li > a {
+.nav-links>li>a {
   height: 90px;
   display: inline-flex;
   align-items: center;
@@ -114,7 +116,7 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links > li > a:hover {
+.nav-links>li>a:hover {
   color: var(--blue-accent);
 }
 
@@ -1490,6 +1492,7 @@ footer p {
     display: none !important;
   }
 }
+
 /* ───────────── MOBILE MENU FIX FINAL ───────────── */
 
 .mobile-menu-btn {
@@ -1693,4 +1696,62 @@ body.menu-open {
   .mobile-menu-btn {
     display: none !important;
   }
+}
+
+/* ───────────── FIX MOBILE CTA + PHONE LINKS ───────────── */
+
+/* Corrige el botón "Solicitar Presupuesto" dentro del menú mobile */
+.mobile-menu .mobile-menu-cta,
+.mobile-menu .mobile-menu-cta:visited,
+.mobile-menu .mobile-menu-cta:active {
+  background: var(--amber) !important;
+  color: var(--ink) !important;
+  border: 2px solid var(--amber) !important;
+  text-decoration: none !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100%;
+  min-height: 50px;
+  margin-top: 1rem;
+
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.mobile-menu .mobile-menu-cta:hover {
+  background: var(--amber-dim) !important;
+  color: var(--ink) !important;
+}
+
+
+/* Corrige enlaces de teléfono/email dentro de contacto */
+.contact-item-text a,
+.contact-item-text a:visited,
+.contact-item-text a:active {
+  color: var(--white-dim) !important;
+  text-decoration: none !important;
+}
+
+.contact-item-text a:hover {
+  color: var(--blue-accent) !important;
+}
+
+
+/* Corrige cualquier enlace dentro de los textos de contacto */
+#contact a,
+#contact a:visited,
+#contact a:active {
+  text-decoration: none;
+}
+
+#contact .contact-item-text span,
+#contact .contact-item-text span a {
+  color: var(--white-dim) !important;
 }
