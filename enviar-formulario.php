@@ -11,23 +11,40 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $compresor = htmlspecialchars(trim($_POST["compresor"] ?? ""));
     $mensaje = htmlspecialchars(trim($_POST["mensaje"] ?? ""));
 
-    if (empty($nombre) || empty($email)) {
+    if (
+        empty($nombre) ||
+        empty($empresa) ||
+        empty($email) ||
+        empty($telefono) ||
+        empty($compresor) ||
+        empty($mensaje)
+    ) {
         header("Location: gracias.html?error=campos");
         exit;
     }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("Location: gracias.html?error=email");
+        exit;
+    }
+
+    if (!preg_match('/^(\+34\s?)?[6-9][0-9\s]{8,14}$/', $telefono)) {
+        header("Location: gracias.html?error=telefono");
+        exit;
+    }
+
     $contenido = "
-    Nueva solicitud recibida desde la web:
+Nueva solicitud recibida desde la web:
 
-    Nombre: $nombre
-    Empresa: $empresa
-    Email: $email
-    Teléfono: $telefono
-    Marca/modelo del compresor: $compresor
+Nombre: $nombre
+Empresa: $empresa
+Email: $email
+Teléfono: $telefono
+Marca/modelo del compresor: $compresor
 
-    Mensaje:
-    $mensaje
-    ";
+Mensaje:
+$mensaje
+";
 
     $headers = "From: CST Ibérica <no-reply@cstiberica.es>\r\n";
     $headers .= "Reply-To: $email\r\n";

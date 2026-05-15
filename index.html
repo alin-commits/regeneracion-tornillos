@@ -347,23 +347,94 @@
       </div>
     </div>
 
-<form class="reveal" action="enviar-formulario.php" method="POST">
+<form class="reveal contact-form" action="enviar-formulario.php" method="POST" id="contactForm">
   <div class="form-row">
-    <input type="text" name="nombre" placeholder="Nombre y apellidos" required>
-    <input type="text" name="empresa" placeholder="Empresa">
+    <input 
+      type="text" 
+      name="nombre" 
+      id="nombre"
+      placeholder="Nombre y apellidos" 
+      minlength="3"
+      required
+    >
+
+    <input 
+      type="text" 
+      name="empresa" 
+      id="empresa"
+      placeholder="Empresa" 
+      minlength="2"
+      required
+    >
   </div>
+
   <div class="form-row">
-    <input type="email" name="email" placeholder="Email de contacto" required>
-    <input type="tel" name="telefono" placeholder="Teléfono">
+    <input 
+      type="email" 
+      name="email" 
+      id="email"
+      placeholder="Email de contacto" 
+      required
+    >
+    <input 
+      type="tel" 
+      name="telefono" 
+      id="telefono"
+      placeholder="Teléfono" 
+      pattern="^(\+34\s?)?[6-9][0-9\s]{8,14}$"
+      minlength="9"
+      maxlength="20"
+      required
+    >
   </div>
-  <input type="text" name="compresor" placeholder="Marca y modelo del compresor">
-  <textarea name="mensaje" placeholder="Describa brevemente el estado o problema del equipo…"></textarea>
+  <input 
+    type="text" 
+    name="compresor" 
+    id="compresor"
+    placeholder="Marca y modelo del compresor" 
+    minlength="2"
+    required
+  >
+  <textarea 
+    name="mensaje" 
+    id="mensaje"
+    placeholder="Describa brevemente el estado o problema del equipo…" 
+    minlength="10"
+    required
+  ></textarea>
+
+  <p class="form-error" id="formError"></p>
+
   <button type="submit" class="form-submit">Enviar solicitud →</button>
 </form>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="floating-contact">
+  <a 
+    class="floating-btn floating-phone" 
+    href="tel:+34912345678" 
+    aria-label="Llamar por teléfono"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.42 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .39 1.97.74 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.61 2.9.74A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </a>
+
+  <a 
+    class="floating-btn floating-whatsapp" 
+    href="https://wa.me/34912345678?text=Hola%2C%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20la%20regeneraci%C3%B3n%20de%20tornillos%20de%20aire%20comprimido." 
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16.04 3C8.87 3 3.04 8.82 3.04 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.69-1.75a12.9 12.9 0 0 0 6.35 1.66h.01c7.16 0 12.99-5.82 12.99-12.98C29.04 8.82 23.21 3 16.04 3Zm0 23.7h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.97 1.04 1.06-3.87-.25-.4a10.7 10.7 0 0 1-1.65-5.76c0-5.89 4.79-10.68 10.69-10.68 2.85 0 5.53 1.11 7.55 3.13a10.6 10.6 0 0 1 3.13 7.54c0 5.89-4.8 10.73-10.7 10.73Zm5.86-8.01c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.58-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.63 0 1.55 1.14 3.05 1.3 3.26.16.21 2.24 3.42 5.43 4.79.76.33 1.35.53 1.81.68.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.16-1.52.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z"/>
+    </svg>
+  </a>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <a class="footer-logo" href="https://www.cstiberica.es" aria-label="Ir a CST Ibérica">
@@ -377,18 +448,75 @@
 <script>
   /* Scroll reveal */
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
   }, { threshold: 0.1 });
+
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* Form */
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Mensaje enviado';
-    btn.style.background = '#2d7a4a';
-    btn.style.borderColor = '#2d7a4a';
-    btn.disabled = true;
+  /* Validación avanzada del formulario */
+  const contactForm = document.getElementById('contactForm');
+  const formError = document.getElementById('formError');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      const nombre = document.getElementById('nombre').value.trim();
+      const empresa = document.getElementById('empresa').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const compresor = document.getElementById('compresor').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      const phoneRegex = /^(\+34\s?)?[6-9][0-9\s]{8,14}$/;
+
+      formError.textContent = '';
+
+      if (!nombre || !empresa || !email || !telefono || !compresor || !mensaje) {
+        e.preventDefault();
+        formError.textContent = 'Por favor, complete todos los campos antes de enviar.';
+        return;
+      }
+
+      if (nombre.length < 3) {
+        e.preventDefault();
+        formError.textContent = 'Introduzca un nombre válido.';
+        return;
+      }
+
+      if (empresa.length < 2) {
+        e.preventDefault();
+        formError.textContent = 'Introduzca una empresa válida.';
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        e.preventDefault();
+        formError.textContent = 'Introduzca un correo electrónico válido.';
+        return;
+      }
+
+      if (!phoneRegex.test(telefono)) {
+        e.preventDefault();
+        formError.textContent = 'Introduzca un teléfono válido. Ejemplo: 612345678 o +34 612345678.';
+        return;
+      }
+
+      if (compresor.length < 2) {
+        e.preventDefault();
+        formError.textContent = 'Introduzca la marca y modelo del compresor.';
+        return;
+      }
+
+      if (mensaje.length < 10) {
+        e.preventDefault();
+        formError.textContent = 'Describa brevemente el problema con al menos 10 caracteres.';
+        return;
+      }
+    });
   }
 </script>
 </body>

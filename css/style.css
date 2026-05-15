@@ -1253,4 +1253,106 @@ footer p {
     height: 18px;
     max-height: 18px;
   }
+/* ───────────── FORM VALIDATION ───────────── */
+
+.form-error {
+  min-height: 1.2rem;
+  font-size: 0.82rem;
+  color: #ffb4b4;
+  line-height: 1.4;
+}
+
+input:required:valid,
+textarea:required:valid {
+  border-color: rgba(0, 157, 225, 0.65);
+}
+
+input:required:invalid:not(:placeholder-shown),
+textarea:required:invalid:not(:placeholder-shown) {
+  border-color: rgba(255, 120, 120, 0.75);
+}
+
+/* ───────────── FLOATING CONTACT BUTTONS ───────────── */
+
+.floating-contact {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.floating-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ink);
+  background: var(--amber);
+  border: 1px solid rgba(245, 245, 245, 0.35);
+
+  text-decoration: none;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-btn svg {
+  width: 27px;
+  height: 27px;
+  display: block;
+}
+
+.floating-btn:hover {
+  transform: translateY(-4px);
+  background: var(--blue-accent);
+  color: var(--white);
+  box-shadow: 0 18px 45px rgba(0, 157, 225, 0.25);
+}
+
+.floating-phone {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.floating-phone:hover {
+  background: var(--blue-accent);
+  color: var(--white);
+}
+
+.floating-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  border-color: rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp:hover {
+  background: #1ebe5d;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .floating-contact {
+    right: 16px;
+    bottom: 16px;
+    gap: 0.7rem;
+  }
+
+  .floating-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
 }
