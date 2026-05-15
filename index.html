@@ -347,19 +347,19 @@
       </div>
     </div>
 
-    <form class="reveal" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <input type="text" placeholder="Nombre y apellidos" required>
-        <input type="text" placeholder="Empresa">
-      </div>
-      <div class="form-row">
-        <input type="email" placeholder="Email de contacto" required>
-        <input type="tel" placeholder="Teléfono">
-      </div>
-      <input type="text" placeholder="Marca y modelo del compresor">
-      <textarea placeholder="Describa brevemente el estado o problema del equipo…"></textarea>
-      <button type="submit" class="form-submit">Enviar solicitud →</button>
-    </form>
+<form class="reveal" action="enviar-formulario.php" method="POST">
+  <div class="form-row">
+    <input type="text" name="nombre" placeholder="Nombre y apellidos" required>
+    <input type="text" name="empresa" placeholder="Empresa">
+  </div>
+  <div class="form-row">
+    <input type="email" name="email" placeholder="Email de contacto" required>
+    <input type="tel" name="telefono" placeholder="Teléfono">
+  </div>
+  <input type="text" name="compresor" placeholder="Marca y modelo del compresor">
+  <textarea name="mensaje" placeholder="Describa brevemente el estado o problema del equipo…"></textarea>
+  <button type="submit" class="form-submit">Enviar solicitud →</button>
+</form>
   </div>
 </section>
 
