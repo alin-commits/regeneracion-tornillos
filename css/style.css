@@ -1206,84 +1206,112 @@ footer p {
 
 /* ───────────── FLOATING CONTACT BUTTONS ───────────── */
 
-.floating-contact {
-  position: fixed !important;
-  right: 24px !important;
-  bottom: 24px !important;
-  z-index: 9999 !important;
-
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 0.85rem !important;
-
-  width: auto !important;
-  height: auto !important;
-  pointer-events: auto !important;
-}
-
-.floating-btn {
-  width: 58px !important;
-  height: 58px !important;
-  min-width: 58px !important;
-  min-height: 58px !important;
-  max-width: 58px !important;
-  max-height: 58px !important;
-
-  border-radius: 50% !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
+.cst-floating-call {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99999;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #006BFF;
+  color: #ffffff !important;
+  border-radius: 50%;
   text-decoration: none !important;
-  line-height: 1 !important;
-
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35) !important;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 10px 28px rgba(0, 107, 255, 0.45);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
 }
 
-.floating-btn svg {
-  width: 27px !important;
-  height: 27px !important;
-  min-width: 27px !important;
-  min-height: 27px !important;
-  max-width: 27px !important;
-  max-height: 27px !important;
-
-  display: block !important;
-  flex-shrink: 0 !important;
+.cst-floating-call svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
 }
 
-.floating-btn:hover {
-  transform: translateY(-4px) !important;
+.cst-floating-call:hover {
+  background: #0052CC;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 14px 36px rgba(0, 107, 255, 0.6);
 }
 
-.floating-phone {
-  background: var(--white) !important;
-  color: var(--ink) !important;
-  border: 1px solid rgba(245, 245, 245, 0.35) !important;
+.cst-floating-call::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 107, 255, 0.45);
+  animation: cst-call-pulse 1.8s infinite;
 }
 
-.floating-phone:hover {
-  background: var(--blue-accent) !important;
-  color: var(--white) !important;
-  box-shadow: 0 18px 45px rgba(0, 157, 225, 0.25) !important;
+@keyframes cst-call-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
 }
 
-.floating-whatsapp {
-  background: #25d366 !important;
+.cst-floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 100px;
+  z-index: 99999;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366;
   color: #ffffff !important;
-  border: 1px solid rgba(37, 211, 102, 0.45) !important;
+  border-radius: 50%;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
 }
 
-.floating-whatsapp:hover {
-  background: #1ebe5d !important;
-  color: #ffffff !important;
-  box-shadow: 0 18px 45px rgba(37, 211, 102, 0.28) !important;
+.cst-floating-whatsapp svg {
+  width: 34px;
+  height: 34px;
+  fill: #ffffff;
+}
+
+.cst-floating-whatsapp:hover {
+  background: #1EBE5D;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.6);
+}
+
+.cst-floating-whatsapp::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.45);
+  animation: cst-whatsapp-pulse 1.8s infinite;
+}
+
+@keyframes cst-whatsapp-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
 }
 
 /* ───────────── RESPONSIVE ───────────── */
@@ -1409,28 +1437,28 @@ footer p {
     max-height: 20px;
   }
 
-  .floating-contact {
-    right: 16px !important;
-    bottom: 16px !important;
-    gap: 0.7rem !important;
+  .cst-floating-call {
+    right: 18px;
+    bottom: 18px;
+    width: 58px;
+    height: 58px;
   }
 
-  .floating-btn {
-    width: 52px !important;
-    height: 52px !important;
-    min-width: 52px !important;
-    min-height: 52px !important;
-    max-width: 52px !important;
-    max-height: 52px !important;
+  .cst-floating-call svg {
+    width: 28px;
+    height: 28px;
   }
 
-  .floating-btn svg {
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-    min-height: 24px !important;
-    max-width: 24px !important;
-    max-height: 24px !important;
+  .cst-floating-whatsapp {
+    right: 18px;
+    bottom: 88px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .cst-floating-whatsapp svg {
+    width: 32px;
+    height: 32px;
   }
 }
 
