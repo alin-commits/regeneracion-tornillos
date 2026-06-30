@@ -1314,6 +1314,315 @@ footer p {
   }
 }
 
+/* ───────────── QUÉ ES ───────────── */
+
+#que-es {
+  background: var(--ink);
+}
+
+.que-es-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.que-es-text p {
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.que-es-emphasis {
+  font-size: 1.15rem !important;
+  font-weight: 500;
+  color: var(--white) !important;
+  border-left: 3px solid var(--blue-accent);
+  padding-left: 1.2rem;
+  margin-bottom: 0 !important;
+}
+
+.que-es-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.que-es-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  background: var(--ink3);
+  border: 1px solid var(--white-faint);
+  border-left: 3px solid var(--blue-accent);
+}
+
+.metric-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--blue-accent);
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+
+/* ───────────── PHASE ACCORDION ───────────── */
+
+.phase-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.phase-item {
+  border-bottom: 1px solid var(--white-faint);
+}
+
+.phase-item:first-child {
+  border-top: 1px solid var(--white-faint);
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.phase-header::-webkit-details-marker {
+  display: none;
+}
+
+.phase-title {
+  flex: 1;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+.phase-header:hover .phase-title {
+  color: var(--blue-accent);
+}
+
+.phase-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--white-dim);
+  transition: transform 0.25s ease, color 0.2s;
+}
+
+details[open] .phase-chevron {
+  transform: rotate(180deg);
+  color: var(--blue-accent);
+}
+
+.phase-body {
+  padding: 0 0 1.5rem 4.5rem;
+  color: var(--white-dim);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.phase-body ul {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phase-body li {
+  color: var(--white-dim);
+}
+
+/* ───────────── CUÁNDO REGENERAR ───────────── */
+
+#cuando-regenerar {
+  background: var(--ink);
+}
+
+.cuando-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+
+.cuando-sintomas h3,
+.cuando-vida h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.symptom-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0;
+}
+
+.symptom-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  background: var(--ink3);
+  border: 1px solid var(--white-faint);
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.symptom-list li::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: rgba(248, 160, 0, 0.12);
+  border: 1px solid rgba(248, 160, 0, 0.4);
+  color: #f8a000;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.symptom-list li:hover {
+  border-color: rgba(248, 160, 0, 0.4);
+  color: var(--white);
+}
+
+.cuando-vida p {
+  font-size: 0.92rem;
+  color: var(--white-dim);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.vida-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 2rem;
+  background: var(--steel);
+  border-left: 3px solid var(--blue-accent);
+  margin-bottom: 2rem;
+}
+
+.vida-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+
+.vida-desc {
+  font-size: 0.83rem;
+  color: rgba(245, 247, 250, 0.72);
+  line-height: 1.5;
+}
+
+/* ───────────── PRESUPUESTO INFO ───────────── */
+
+#presupuesto-info {
+  background: var(--ink2);
+}
+
+.presupuesto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+
+.presupuesto-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.presupuesto-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--white-faint);
+  font-size: 0.92rem;
+  color: var(--white-dim);
+  transition: color 0.2s;
+}
+
+.presupuesto-list li:first-child {
+  border-top: 1px solid var(--white-faint);
+}
+
+.presupuesto-list li::before {
+  content: "✔";
+  color: #22c55e;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.presupuesto-nota {
+  background: var(--ink3);
+  border: 1px solid var(--white-faint);
+  border-left: 3px solid var(--amber);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.presupuesto-nota h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.presupuesto-nota p {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+}
+
+.presupuesto-nota strong {
+  color: var(--white);
+}
+
+.presupuesto-nota .btn-primary {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+}
+
 /* ───────────── RESPONSIVE ───────────── */
 
 /* Tablet grande / 1024px: aquí cambia a menú hamburguesa */
@@ -1378,12 +1687,20 @@ footer p {
   }
 
   .process-layout,
-  .contact-layout {
+  .contact-layout,
+  .que-es-layout,
+  .cuando-layout,
+  .presupuesto-layout {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .process-aside {
     position: static;
+  }
+
+  .phase-body {
+    padding-left: 3rem;
   }
 
   .logo img {
