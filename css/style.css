@@ -1202,50 +1202,58 @@ footer a:hover {
 }
 
 /* ───────────── PDCC COOKIE CONSENT — OVERRIDES ───────────── */
+/*
+  El JS de index.html añade la clase .cst-pdcc-root al contenedor
+  raíz que PDCC inyecta en <body>, permitiendo targetear con
+  certeza todos sus descendientes sin depender de nombres internos.
+*/
 
-/* Fondo oscuro del overlay/backdrop */
-.pdcc-overlay,
-.pdcc-backdrop,
-[class*="pdcc-overlay"],
-[class*="pdcc-backdrop"] {
+/* Fuente base */
+.cst-pdcc-root {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+/* Overlay / backdrop */
+.cst-pdcc-root [class*="overlay"],
+.cst-pdcc-root [class*="backdrop"],
+.cst-pdcc-root [class*="mask"] {
   background: rgba(7, 17, 31, 0.85) !important;
   backdrop-filter: blur(6px) !important;
 }
 
-/* Barra principal del banner */
-.pdcc-bar,
-.pdcc-cookie-bar,
-.pdcc-notice,
-[class*="pdcc-bar"],
-[class*="pdcc-notice"] {
+/* Todos los paneles y contenedores internos */
+.cst-pdcc-root > *,
+.cst-pdcc-root [class*="bar"],
+.cst-pdcc-root [class*="modal"],
+.cst-pdcc-root [class*="panel"],
+.cst-pdcc-root [class*="notice"],
+.cst-pdcc-root [class*="popup"],
+.cst-pdcc-root [class*="container"],
+.cst-pdcc-root [class*="content"],
+.cst-pdcc-root [class*="wrapper"],
+.cst-pdcc-root [class*="box"],
+.cst-pdcc-root [class*="inner"] {
   background: var(--ink2) !important;
-  border-top: 1px solid var(--white-faint) !important;
-  box-shadow: 0 -6px 32px rgba(0, 0, 0, 0.5) !important;
+  color: var(--white-dim) !important;
+  border-color: var(--white-faint) !important;
+}
+
+/* Texto y párrafos */
+.cst-pdcc-root p,
+.cst-pdcc-root span,
+.cst-pdcc-root li,
+.cst-pdcc-root label {
   color: var(--white-dim) !important;
   font-family: 'IBM Plex Sans', sans-serif !important;
   font-size: 0.88rem !important;
   line-height: 1.65 !important;
 }
 
-/* Modal / panel de configuración */
-.pdcc-modal,
-.pdcc-settings,
-.pdcc-modal__content,
-.pdcc-settings-modal,
-[class*="pdcc-modal"],
-[class*="pdcc-settings"] {
-  background: var(--ink2) !important;
-  border: 1px solid var(--white-faint) !important;
-  color: var(--white) !important;
-  font-family: 'IBM Plex Sans', sans-serif !important;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7) !important;
-}
-
-/* Títulos dentro del banner/modal */
-[class*="pdcc"] h1,
-[class*="pdcc"] h2,
-[class*="pdcc"] h3,
-[class*="pdcc"] h4 {
+/* Títulos */
+.cst-pdcc-root h1,
+.cst-pdcc-root h2,
+.cst-pdcc-root h3,
+.cst-pdcc-root h4 {
   font-family: 'Barlow Condensed', sans-serif !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -1253,59 +1261,28 @@ footer a:hover {
   color: var(--white) !important;
 }
 
-/* Texto y párrafos */
-[class*="pdcc"] p,
-[class*="pdcc"] span:not([class*="pdcc-slider"]):not([class*="pdcc-toggle"]) {
-  color: var(--white-dim) !important;
-  font-family: 'IBM Plex Sans', sans-serif !important;
-  font-size: 0.88rem !important;
-  line-height: 1.65 !important;
-}
-
-/* Links dentro del banner */
-[class*="pdcc"] a {
+/* Links */
+.cst-pdcc-root a {
   color: var(--blue-accent) !important;
   text-decoration: none !important;
 }
 
-[class*="pdcc"] a:hover {
+.cst-pdcc-root a:hover {
   text-decoration: underline !important;
 }
 
-/* Categorías / acordeón */
-[class*="pdcc-category"],
-[class*="pdcc-accordion"],
-[class*="pdcc-group"] {
-  background: var(--ink3) !important;
-  border: 1px solid var(--white-faint) !important;
-  color: var(--white-dim) !important;
+/* Separadores */
+.cst-pdcc-root hr,
+.cst-pdcc-root [class*="divider"],
+.cst-pdcc-root [class*="separator"] {
+  border-color: var(--white-faint) !important;
 }
 
-[class*="pdcc-category"]:hover,
-[class*="pdcc-accordion"]:hover {
-  border-color: rgba(0, 157, 225, 0.4) !important;
-}
-
-/* Toggle / interruptor */
-[class*="pdcc-slider"],
-[class*="pdcc-toggle-bg"],
-[class*="pdcc-switch-bg"] {
-  background: var(--ink3) !important;
-  border: 1px solid var(--white-faint) !important;
-}
-
-[class*="pdcc"] input:checked + [class*="pdcc-slider"],
-[class*="pdcc"] input:checked ~ [class*="pdcc-slider"],
-[class*="pdcc-toggle"].active [class*="pdcc-slider"] {
+/* Toggle activo */
+.cst-pdcc-root input:checked + *,
+.cst-pdcc-root input:checked ~ * {
   background: var(--blue-accent) !important;
   border-color: var(--blue-accent) !important;
-}
-
-/* Separadores */
-[class*="pdcc-divider"],
-[class*="pdcc-separator"],
-[class*="pdcc"] hr {
-  border-color: var(--white-faint) !important;
 }
 
 /* ───────────── SCROLL ANIMATIONS ───────────── */

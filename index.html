@@ -35,6 +35,35 @@
     });
   </script>
 
+  <script>
+    /* Etiqueta el contenedor raíz de PDCC con .cst-pdcc-root para que
+       el CSS pueda sobrescribir sus estilos sin adivinar class names. */
+    (function () {
+      function tagPDCC(el) {
+        if (!el || el.nodeType !== 1 || el.classList.contains('cst-pdcc-root')) return;
+        if (
+          (el.className && el.className.indexOf('pdcc') !== -1) ||
+          (el.id && el.id.indexOf('pdcc') !== -1) ||
+          el.querySelector('[class*="pdcc"],[id*="pdcc"]')
+        ) {
+          el.classList.add('cst-pdcc-root');
+        }
+      }
+      var mo = new MutationObserver(function (muts) {
+        muts.forEach(function (m) { m.addedNodes.forEach(tagPDCC); });
+      });
+      function start() {
+        [].forEach.call(document.body.children, tagPDCC);
+        mo.observe(document.body, { childList: true });
+      }
+      if (document.body) { start(); }
+      else { document.addEventListener('DOMContentLoaded', start); }
+      window.addEventListener('load', function () {
+        setTimeout(function () { mo.disconnect(); }, 3000);
+      });
+    })();
+  </script>
+
   <title>Regeneración de Tornillos Compresores | Ahorro hasta 70% | CST Ibérica</title>
   <meta name="description" content="Especialistas en regeneración de tornillos para compresores industriales. Ahorro de hasta un 70% frente a la sustitución. Diagnóstico en 24h, garantía 12 meses y servicio express 48h en toda la Península.">
 
