@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://pdcc.gdpr.es/pdcc.min.css">
+  <script charset="utf-8" src="https://pdcc.gdpr.es/pdcc.min.js"></script>
+  <script type="text/javascript">
+    PDCookieConsent.config({
+      "brand": {
+        "dev": false,
+        "name": "CST Ibérica",
+        "url": "https://regeneraciontornillos.es",
+        "websiteOwner": "Compresores y Sistemas Técnicos Ibérica SL"
+      },
+      "showRejectButton": true,
+      "cookiePolicyLink": "https://regeneraciontornillos.es/politica-de-cookies.html",
+      "hideModalIn": ["https://regeneraciontornillos.es/politica-de-cookies.html"],
+      "styles": {
+        "primaryButton": {
+          "bgColor": "#1A5276",
+          "txtColor": "#FFFFFF"
+        },
+        "secondaryButton": {
+          "bgColor": "#EEEEEE",
+          "txtColor": "#333333"
+        },
+        "rejectButton": {
+          "bgColor": "#EEEEEE",
+          "txtColor": "#333333"
+        }
+      }
+    });
+  </script>
+
+  <title>Política de Cookies | CST Ibérica — Regeneración de Tornillos</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:  #07111f;
+      --ink2: #0b1b2e;
+      --ink3: #102a44;
+      --blue-accent: #009de1;
+      --amber: #f5f5f5;
+      --white: #f5f7fa;
+      --white-dim: rgba(245, 247, 250, 0.68);
+      --white-faint: rgba(245, 247, 250, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    .cookies-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 76px;
+      background: rgba(7, 17, 31, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--white-faint);
+    }
+
+    .cookies-logo img {
+      height: 32px;
+      display: block;
+    }
+
+    .cookies-back {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .cookies-back:hover { color: var(--white); }
+
+    /* HERO */
+    .cookies-hero {
+      padding: 5rem 5vw 4rem;
+      background: var(--ink2);
+      border-bottom: 1px solid var(--white-faint);
+    }
+
+    .cookies-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .cookies-tag::before { content: '//'; }
+
+    .cookies-hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .cookies-hero p {
+      font-size: 0.9rem;
+      color: var(--white-dim);
+    }
+
+    /* CONTENT */
+    .cookies-body {
+      padding: 5rem 5vw;
+    }
+
+    .cookies-content {
+      max-width: 800px;
+    }
+
+    .cookies-content h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-top: 2.8rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--white-faint);
+    }
+
+    .cookies-content h2:first-child { margin-top: 0; }
+
+    .cookies-content p {
+      font-size: 0.92rem;
+      color: var(--white-dim);
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+
+    .cookies-content ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .cookies-content li {
+      font-size: 0.92rem;
+      color: var(--white-dim);
+      line-height: 1.65;
+    }
+
+    .cookies-content a {
+      color: var(--blue-accent);
+      text-decoration: none;
+    }
+
+    .cookies-content a:hover { text-decoration: underline; }
+
+    .cookies-content strong { color: var(--white); font-weight: 500; }
+
+    /* TABLE */
+    .cookies-table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .cookies-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .cookies-table th {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-align: left;
+      padding: 0.75rem 1rem;
+      background: var(--ink3);
+      border-bottom: 1px solid var(--white-faint);
+    }
+
+    .cookies-table td {
+      padding: 0.85rem 1rem;
+      color: var(--white-dim);
+      border-bottom: 1px solid var(--white-faint);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .cookies-table tr:last-child td { border-bottom: none; }
+
+    .badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      background: rgba(0, 157, 225, 0.15);
+      border: 1px solid rgba(0, 157, 225, 0.3);
+      color: var(--blue-accent);
+    }
+
+    /* PANEL COOKIES BTN */
+    .pdcc-btn {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 1.8rem;
+      background: var(--ink3);
+      color: var(--white);
+      border: 1px solid var(--white-faint);
+      margin-top: 0.5rem;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .pdcc-btn:hover {
+      border-color: var(--blue-accent);
+      background: rgba(0, 157, 225, 0.08);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink2);
+      border-top: 1px solid var(--white-faint);
+      padding: 2.5rem 5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: center;
+    }
+
+    .footer-logo img { height: 24px; opacity: 0.6; }
+
+    footer p {
+      font-size: 0.78rem;
+      color: var(--white-dim);
+    }
+
+    footer a {
+      color: var(--white-dim);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="cookies-nav">
+    <a class="cookies-logo" href="index.html" aria-label="Volver al inicio">
+      <img src="img/isotipo_mono.svg" alt="CST Ibérica logotipo">
+    </a>
+    <a class="cookies-back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Volver al sitio
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <div class="cookies-hero">
+    <p class="cookies-tag">Legal</p>
+    <h1>Política de Cookies</h1>
+    <p>Última actualización: 1 de julio de 2026 &nbsp;·&nbsp; regeneraciontornillos.es</p>
+  </div>
+
+  <!-- BODY -->
+  <main class="cookies-body">
+    <div class="cookies-content">
+
+      <h2>1. ¿Qué son las cookies?</h2>
+      <p>Una cookie es un pequeño archivo de texto que un sitio web almacena en su dispositivo cuando lo visita. Las cookies permiten que el sitio recuerde sus acciones y preferencias (como el estado de consentimiento de cookies) durante un período de tiempo, de modo que no tenga que volver a configurarlas cada vez que regrese o navegue por distintas páginas.</p>
+
+      <h2>2. Responsable del tratamiento</h2>
+      <p>
+        <strong>Titular:</strong> Compresores y Sistemas Técnicos Ibérica SL (CST Ibérica)<br>
+        <strong>Dominio:</strong> regeneraciontornillos.es<br>
+        <strong>Email:</strong> <a href="mailto:info@cstiberica.es">info@cstiberica.es</a><br>
+        <strong>Teléfono:</strong> <a href="tel:+34607682730">+34 607 682 730</a><br>
+        <strong>Dirección:</strong> Calle Portillo 4, Pol. Ind. Carrús, 03205 Elx (Alicante)
+      </p>
+
+      <h2>3. ¿Qué cookies utiliza este sitio web?</h2>
+      <p>Este sitio web utiliza exclusivamente cookies técnicas, necesarias para su correcto funcionamiento. No se utilizan cookies de análisis, publicidad ni redes sociales de terceros.</p>
+
+      <div class="cookies-table-wrap">
+        <table class="cookies-table">
+          <thead>
+            <tr>
+              <th>Cookie</th>
+              <th>Proveedor</th>
+              <th>Categoría</th>
+              <th>Finalidad</th>
+              <th>Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pdcc_consent</code></td>
+              <td>regeneraciontornillos.es</td>
+              <td><span class="badge">Técnica</span></td>
+              <td>Almacena el estado de consentimiento del usuario respecto a las cookies del sitio</td>
+              <td>12 meses</td>
+            </tr>
+            <tr>
+              <td><code>PHPSESSID</code></td>
+              <td>regeneraciontornillos.es</td>
+              <td><span class="badge">Técnica</span></td>
+              <td>Gestión de sesión del servidor, necesaria para el envío del formulario de contacto</td>
+              <td>Sesión</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Cookies técnicas o necesarias:</strong> Son imprescindibles para la correcta navegación por el sitio web y para que pueda utilizar sus funcionalidades. No requieren consentimiento del usuario según el artículo 22.2 de la LSSI-CE.</p>
+
+      <h2>4. ¿Cómo gestionar sus preferencias de cookies?</h2>
+      <p>Puede revisar o modificar sus preferencias de cookies en cualquier momento haciendo clic en el siguiente enlace:</p>
+      <a href="#" class="pdcc-btn pdcc-open-modal">Abrir Panel de Cookies</a>
+
+      <p style="margin-top: 1.5rem;">También puede configurar o deshabilitar las cookies directamente desde su navegador:</p>
+      <ul>
+        <li><strong>Google Chrome:</strong> Ajustes &gt; Privacidad y seguridad &gt; Cookies y otros datos de sitios</li>
+        <li><strong>Mozilla Firefox:</strong> Opciones &gt; Privacidad y seguridad &gt; Cookies y datos del sitio</li>
+        <li><strong>Safari:</strong> Preferencias &gt; Privacidad &gt; Cookies y datos del sitio web</li>
+        <li><strong>Microsoft Edge:</strong> Configuración &gt; Privacidad, búsqueda y servicios &gt; Cookies</li>
+      </ul>
+      <p>Tenga en cuenta que la desactivación de determinadas cookies puede afectar a la funcionalidad del sitio web.</p>
+
+      <h2>5. Cookies de terceros</h2>
+      <p>Actualmente este sitio web no utiliza cookies de análisis, publicidad, ni redes sociales de terceros. En caso de incorporarlas en el futuro, esta política será actualizada previamente e informará de ello al usuario a través del panel de consentimiento.</p>
+
+      <h2>6. Base legal</h2>
+      <p>El uso de cookies técnicas tiene como base legal el interés legítimo y la necesidad contractual (art. 6.1.b y 6.1.f del RGPD), así como lo dispuesto en el artículo 22.2 de la Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE).</p>
+
+      <h2>7. Actualizaciones de esta política</h2>
+      <p>Esta política puede actualizarse cuando sea necesario para reflejar cambios en las cookies utilizadas, modificaciones técnicas o nuevos requisitos normativos. La fecha de última actualización se indica al comienzo de este documento. Le recomendamos que consulte esta página periódicamente.</p>
+
+      <h2>8. Contacto</h2>
+      <p>Para cualquier consulta relativa al uso de cookies o al tratamiento de sus datos personales, puede dirigirse a:</p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:info@cstiberica.es">info@cstiberica.es</a><br>
+        <strong>Teléfono:</strong> <a href="tel:+34607682730">+34 607 682 730</a><br>
+        <strong>Dirección postal:</strong> Calle Portillo 4, Pol. Ind. Carrús, 03205 Elx (Alicante)
+      </p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="footer-logo" href="index.html" aria-label="Volver al inicio">
+      <img src="img/isotipo_mono.svg" alt="CST Ibérica logotipo">
+    </a>
+    <p>© 2026 CST Iberica S.L. Todos los derechos reservados.</p>
+    <p>Política de Privacidad · Aviso Legal · <a href="#" class="pdcc-open-modal">Panel Cookies</a></p>
+  </footer>
+
+</body>
+</html>
