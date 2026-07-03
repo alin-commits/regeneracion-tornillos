@@ -535,6 +535,8 @@ h1 em {
   transform: translateX(4px);
 }
 
+/* Rotor / tornillo sin fin decorativo del hero.
+   z-index bajo para quedar detrás del contenido (.hero-content tiene z-index:2). */
 .hero-visual {
   position: absolute;
   right: 5vw;
@@ -544,6 +546,7 @@ h1 em {
   max-width: 520px;
   opacity: 0.12;
   pointer-events: none;
+  z-index: 0;
 }
 
 .gear-outer {
@@ -1759,6 +1762,14 @@ details[open] .phase-chevron {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Rotor: se agranda y se atenúa aún más para no competir con el texto */
+  .hero-visual {
+    right: -5vw;
+    width: 55vw;
+    max-width: 420px;
+    opacity: 0.08;
+  }
 }
 
 /* Tablet pequeña */
@@ -1801,16 +1812,22 @@ details[open] .phase-chevron {
     height: 32px;
     max-height: 32px;
   }
+
+  /* Rotor: pasa a fondo centrado, muy tenue, detrás del texto */
+  .hero-visual {
+    right: 50%;
+    top: 62%;
+    transform: translate(50%, -50%);
+    width: 80vw;
+    max-width: 340px;
+    opacity: 0.06;
+  }
 }
 
 /* Mobile */
 @media (max-width: 640px) {
   nav {
     gap: 1rem;
-  }
-
-  .hero-visual {
-    display: none;
   }
 
   .hero-content {
@@ -1918,6 +1935,14 @@ details[open] .phase-chevron {
   .footer-logo img {
     height: 18px;
     max-height: 18px;
+  }
+
+  /* Rotor: aún más pequeño y discreto en pantallas muy estrechas */
+  .hero-visual {
+    width: 70vw;
+    max-width: 260px;
+    top: 58%;
+    opacity: 0.05;
   }
 }
 
