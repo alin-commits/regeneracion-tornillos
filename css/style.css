@@ -1204,6 +1204,32 @@ footer a:hover {
   object-fit: contain;
 }
 
+.footer-recursos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-recursos-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  margin-bottom: 0.25rem;
+}
+
+.footer-recursos a {
+  font-size: 0.78rem;
+  color: var(--white-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-recursos a:hover {
+  color: var(--white);
+}
+
 /* ───────────── PDCC COOKIE CONSENT — OVERRIDES ───────────── */
 /*
   El JS de index.html añade la clase .cst-pdcc-root al contenedor
