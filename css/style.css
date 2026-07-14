@@ -192,10 +192,10 @@ nav {
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 1px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
+  left: 0;
+  transform: translateY(4px);
 
-  min-width: 190px;
+  min-width: 220px;
   padding: 0.7rem 0;
   list-style: none;
 
@@ -208,11 +208,17 @@ nav {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
+/* El último dropdown (Otros servicios) está en el extremo derecho: se abre hacia la izquierda */
+.nav-dropdown:last-child .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
 .nav-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .dropdown-menu li {

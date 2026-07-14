@@ -143,7 +143,25 @@
 
     <ul class="nav-links">
       <li><a href="#why">Beneficios</a></li>
-      <li><a href="#process">Proceso</a></li>
+
+      <li class="nav-dropdown">
+        <a href="#process" class="dropdown-toggle">
+          Proceso
+          <span class="dropdown-arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#process-phase-1">Inspección inicial</a></li>
+          <li><a href="#process-phase-2">Desmontaje completo</a></li>
+          <li><a href="#process-phase-3">Limpieza</a></li>
+          <li><a href="#process-phase-4">Inspección dimensional</a></li>
+          <li><a href="#process-phase-5">Sustitución de componentes</a></li>
+          <li><a href="#process-phase-6">Reparación de componentes</a></li>
+          <li><a href="#process-phase-7">Ajuste de tolerancias</a></li>
+          <li><a href="#process-phase-8">Montaje</a></li>
+          <li><a href="#process-phase-9">Banco de pruebas</a></li>
+          <li><a href="#process-phase-10">Pintura y protección</a></li>
+        </ul>
+      </li>
 
       <li class="nav-dropdown">
         <a href="index.html#services" class="dropdown-toggle">
@@ -187,8 +205,21 @@
 
     <div class="mobile-menu" id="mobileMenu">
       <a href="#why">Beneficios</a>
-      <a href="#process">Proceso</a>
       <a href="#contact">Contacto</a>
+
+      <div class="mobile-menu-group">
+        <span>Proceso</span>
+        <a href="#process-phase-1">Inspección inicial</a>
+        <a href="#process-phase-2">Desmontaje completo</a>
+        <a href="#process-phase-3">Limpieza</a>
+        <a href="#process-phase-4">Inspección dimensional</a>
+        <a href="#process-phase-5">Sustitución de componentes</a>
+        <a href="#process-phase-6">Reparación de componentes</a>
+        <a href="#process-phase-7">Ajuste de tolerancias</a>
+        <a href="#process-phase-8">Montaje</a>
+        <a href="#process-phase-9">Banco de pruebas</a>
+        <a href="#process-phase-10">Pintura y protección</a>
+      </div>
 
       <div class="mobile-menu-group">
         <span>Servicios</span>
@@ -394,7 +425,7 @@
     <div class="process-layout">
       <div class="phase-accordion reveal">
 
-        <details class="phase-item" open>
+        <details id="process-phase-1" class="phase-item" open>
           <summary class="phase-header">
             <span class="step-num">01</span>
             <span class="phase-title">Inspección inicial</span>
@@ -410,7 +441,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-2" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">02</span>
             <span class="phase-title">Desmontaje completo</span>
@@ -421,7 +452,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-3" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">03</span>
             <span class="phase-title">Limpieza</span>
@@ -432,7 +463,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-4" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">04</span>
             <span class="phase-title">Inspección dimensional</span>
@@ -443,7 +474,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-5" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">05</span>
             <span class="phase-title">Sustitución de componentes</span>
@@ -454,7 +485,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-6" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">06</span>
             <span class="phase-title">Reparación de componentes</span>
@@ -465,7 +496,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-7" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">07</span>
             <span class="phase-title">Ajuste de tolerancias</span>
@@ -476,7 +507,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-8" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">08</span>
             <span class="phase-title">Montaje</span>
@@ -487,7 +518,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-9" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">09</span>
             <span class="phase-title">Banco de pruebas</span>
@@ -498,7 +529,7 @@
           </div>
         </details>
 
-        <details class="phase-item">
+        <details id="process-phase-10" class="phase-item">
           <summary class="phase-header">
             <span class="step-num">10</span>
             <span class="phase-title">Pintura y protección</span>
@@ -868,6 +899,16 @@
           }
         });
       }
+
+      /* Abre la fase del acordeón cuando se navega via ancla */
+      function openPhaseFromHash() {
+        var hash = window.location.hash;
+        if (!hash) return;
+        var el = document.querySelector(hash);
+        if (el && el.tagName === 'DETAILS') el.open = true;
+      }
+      openPhaseFromHash();
+      window.addEventListener('hashchange', openPhaseFromHash);
 
       /* Validación avanzada del formulario */
       const contactForm = document.getElementById('contactForm');
