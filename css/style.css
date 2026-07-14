@@ -191,8 +191,9 @@ nav {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 1px);
+  top: 100%;
   left: 0;
+  z-index: 200;
   transform: translateY(4px);
 
   min-width: 220px;
@@ -200,6 +201,7 @@ nav {
   list-style: none;
 
   background: var(--ink2);
+  border: 1px solid var(--white-faint);
 
   opacity: 0;
   visibility: hidden;
@@ -1211,6 +1213,20 @@ footer a:hover {
 }
 
 .footer-recursos {
+  /* Resetea los estilos heredados del selector genérico `nav {}` */
+  position: static;
+  height: auto;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  padding: 0;
+  z-index: auto;
+  top: auto;
+  left: auto;
+  right: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* Estilos propios */
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -1235,6 +1251,166 @@ footer a:hover {
 .footer-recursos a:hover {
   color: var(--white);
 }
+
+/* ───────────── INNER PAGES ───────────── */
+
+.page-hero {
+  background: var(--ink2);
+  border-bottom: 1px solid var(--white-faint);
+  padding: 5rem 5vw 4rem;
+}
+
+.page-hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--white);
+  max-width: 860px;
+  margin: 1rem 0 1.5rem;
+}
+
+.page-hero .section-lead { max-width: 680px; }
+
+.page-body {
+  padding: 5rem 5vw;
+  max-width: 900px;
+}
+
+.page-body h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin: 2.5rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--white-faint);
+}
+
+.page-body h2:first-child { margin-top: 0; }
+
+.page-body p {
+  color: var(--white-dim);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+
+.page-body ul {
+  color: var(--white-dim);
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  line-height: 1.65;
+}
+
+.page-body strong { color: var(--white); font-weight: 500; }
+
+.page-faq {
+  background: var(--ink2);
+  border-top: 1px solid var(--white-faint);
+  border-bottom: 1px solid var(--white-faint);
+  padding: 5rem 5vw;
+}
+
+.page-faq > h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+}
+
+.faq-list {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border: 1px solid var(--white-faint);
+  padding: 1.4rem 1.6rem;
+}
+
+.faq-q {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.faq-a {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.page-related {
+  padding: 5rem 5vw;
+}
+
+.page-related > h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.service-link-secondary {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.service-link-secondary:hover { color: var(--white); }
+
+.ver-mas-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-accent);
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: color 0.2s;
+}
+
+.ver-mas-link:hover { color: var(--white); }
 
 /* ───────────── PDCC COOKIE CONSENT — OVERRIDES ───────────── */
 /*
