@@ -1334,11 +1334,165 @@ footer a:hover {
   gap: 1rem;
 }
 
-.faq-item {
-  border: 1px solid var(--white-faint);
-  padding: 1.4rem 1.6rem;
+/* ── STATS ROW (hero) ── */
+.page-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--white-faint);
+}
+.page-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+.stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-dim);
 }
 
+/* ── FEATURE GRID ── */
+.page-features {
+  padding: 5rem 5vw;
+  background: var(--ink);
+}
+.page-features > h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+}
+.feature-block {
+  background: var(--ink2);
+  border: 1px solid var(--white-faint);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+}
+.feature-block:hover { border-color: rgba(0,157,225,0.4); }
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--blue-accent);
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+}
+.feature-block h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.feature-block p {
+  font-size: 0.87rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── CALLOUT BOX ── */
+.callout-box {
+  background: rgba(0,157,225,0.06);
+  border-left: 3px solid var(--blue-accent);
+  padding: 1.2rem 1.5rem;
+  margin: 1.8rem 0;
+}
+.callout-box p { margin: 0; color: var(--white-dim); font-size: 0.9rem; line-height: 1.75; }
+.callout-box strong { color: var(--white); }
+
+/* ── ICON LIST ── */
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--white-dim);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.icon-list li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  background: var(--blue-accent);
+  border-radius: 50%;
+  margin-top: 0.5rem;
+}
+
+/* ── MID-PAGE CTA BAND ── */
+.page-cta-band {
+  background: var(--ink3);
+  border-top: 1px solid var(--white-faint);
+  border-bottom: 1px solid var(--white-faint);
+  padding: 3rem 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.page-cta-band-text h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.page-cta-band-text p {
+  font-size: 0.87rem;
+  color: var(--white-dim);
+  margin: 0;
+}
+
+/* ── FAQ ACCORDION (details/summary) ── */
+.faq-item {
+  border: 1px solid var(--white-faint);
+  transition: border-color 0.2s;
+}
+.faq-item[open] { border-color: rgba(0,157,225,0.35); }
+.faq-item summary {
+  padding: 1.25rem 1.6rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; }
 .faq-q {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
@@ -1346,14 +1500,22 @@ footer a:hover {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 0.5rem;
+  flex: 1;
 }
-
+.faq-chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--white-dim);
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
 .faq-a {
   font-size: 0.9rem;
   color: var(--white-dim);
-  line-height: 1.7;
+  line-height: 1.75;
   margin: 0;
+  padding: 0 1.6rem 1.25rem;
 }
 
 .page-related {
