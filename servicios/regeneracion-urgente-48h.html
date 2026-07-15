@@ -46,6 +46,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
+  <style>:root { --page-hero-bg: var(--ink3); --page-accent: #f0a020; --page-glow: rgba(240,160,32,0.12); }</style>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <script type="application/ld+json">
   {
@@ -148,15 +149,36 @@
 <main>
 
   <section class="page-hero">
-    <div class="section-tag">Express</div>
-    <h1>Servicio de Regeneración Urgente en 48 Horas</h1>
-    <p class="section-lead">Cuando la producción no puede detenerse. Recogemos el bloque en toda la Península, ejecutamos la regeneración en modo prioritario y lo devolvemos en 48 horas laborables.</p>
-    <div class="page-stats">
-      <div class="page-stat"><span class="stat-num">48 h</span><span class="stat-label">PLAZO DE ENTREGA</span></div>
-      <div class="page-stat"><span class="stat-num">Toda la Península</span><span class="stat-label">RECOGIDA URGENTE</span></div>
-      <div class="page-stat"><span class="stat-num">24/7</span><span class="stat-label">ATENCIÓN DE EMERGENCIA</span></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-glow"></div>
+    <div class="page-hero-inner">
+      <div class="section-tag">Express</div>
+      <h1>Servicio de Regeneración Urgente en 48 Horas</h1>
+      <p class="section-lead">Cuando la producción no puede detenerse. Recogemos el bloque en toda la Península, ejecutamos la regeneración en modo prioritario y lo devolvemos en 48 horas laborables.</p>
+      <div class="page-stats">
+        <div class="page-stat"><span class="stat-num">48 h</span><span class="stat-label">PLAZO DE ENTREGA</span></div>
+        <div class="page-stat"><span class="stat-num">Toda la Península</span><span class="stat-label">RECOGIDA URGENTE</span></div>
+        <div class="page-stat"><span class="stat-num">24/7</span><span class="stat-label">ATENCIÓN DE EMERGENCIA</span></div>
+      </div>
+      <a class="btn-primary" href="tel:+34607682730">Llamar ahora: +34 607 682 730</a>
     </div>
-    <a class="btn-primary" href="../index.html#contact">Solicitar presupuesto →</a>
+    <svg class="page-hero-visual" viewBox="0 0 400 400" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="168" stroke-width="2" opacity="0.65"/>
+      <circle cx="200" cy="200" r="145" stroke-width="1" stroke-dasharray="5 3" opacity="0.3"/>
+      <line x1="200" y1="35" x2="200" y2="57" stroke-width="3.5" stroke-linecap="round" opacity="0.75"/>
+      <line x1="200" y1="343" x2="200" y2="365" stroke-width="3.5" stroke-linecap="round" opacity="0.75"/>
+      <line x1="35" y1="200" x2="57" y2="200" stroke-width="3.5" stroke-linecap="round" opacity="0.75"/>
+      <line x1="343" y1="200" x2="365" y2="200" stroke-width="3.5" stroke-linecap="round" opacity="0.75"/>
+      <line x1="82" y1="82" x2="98" y2="98" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="318" y1="82" x2="302" y2="98" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="82" y1="318" x2="98" y2="302" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="318" y1="318" x2="302" y2="302" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="200" y1="200" x2="200" y2="90" stroke-width="3" stroke-linecap="round" opacity="0.88"/>
+      <line x1="200" y1="200" x2="268" y2="184" stroke-width="2.5" stroke-linecap="round" opacity="0.78"/>
+      <circle cx="200" cy="200" r="8" stroke-width="2.5" opacity="0.85"/>
+      <circle cx="200" cy="200" r="3" fill="currentColor" opacity="0.8"/>
+      <path d="M212 130 L182 205 L204 205 L182 272 L222 192 L200 192 L212 130Z" stroke-width="1.8" opacity="0.88"/>
+    </svg>
   </section>
 
   <section class="page-features reveal">

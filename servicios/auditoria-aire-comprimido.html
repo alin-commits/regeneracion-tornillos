@@ -46,6 +46,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
+  <style>:root { --page-hero-bg: var(--ink3); --page-accent: #30d5b0; --page-glow: rgba(48,213,176,0.1); }</style>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <script type="application/ld+json">
   {
@@ -145,23 +146,41 @@
 </nav>
 
 <section class="page-hero">
-  <div class="section-tag">Consultoría</div>
-  <h1>Auditoría Energética de Aire Comprimido</h1>
-  <p class="section-lead">El aire comprimido es el cuarto servicio industrial por consumo energético. Una auditoría identifica dónde se desperdicia la energía y qué cambios tienen un retorno de inversión más rápido.</p>
-  <div class="page-stats">
-    <div class="page-stat">
-      <span class="stat-num">30%</span>
-      <span class="stat-label">AHORRO ENERGÉTICO MEDIO</span>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-inner">
+    <div class="section-tag">Consultoría</div>
+    <h1>Auditoría Energética de Aire Comprimido</h1>
+    <p class="section-lead">El aire comprimido es el cuarto servicio industrial por consumo energético. Una auditoría identifica dónde se desperdicia la energía y qué cambios tienen un retorno de inversión más rápido.</p>
+    <div class="page-stats">
+      <div class="page-stat"><span class="stat-num">30%</span><span class="stat-label">AHORRO ENERGÉTICO MEDIO</span></div>
+      <div class="page-stat"><span class="stat-num">1–2 años</span><span class="stat-label">RETORNO DE INVERSIÓN</span></div>
+      <div class="page-stat"><span class="stat-num">In situ</span><span class="stat-label">SIN PARAR LA PRODUCCIÓN</span></div>
     </div>
-    <div class="page-stat">
-      <span class="stat-num">1–2 años</span>
-      <span class="stat-label">RETORNO DE INVERSIÓN</span>
-    </div>
-    <div class="page-stat">
-      <span class="stat-num">In situ</span>
-      <span class="stat-label">SIN PARAR LA PRODUCCIÓN</span>
-    </div>
+    <a class="btn-primary" href="../index.html#contact">Solicitar auditoría →</a>
   </div>
+  <svg class="page-hero-visual" viewBox="0 0 440 300" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="130" cy="155" r="110" stroke-width="2" opacity="0.6"/>
+    <circle cx="130" cy="155" r="80" stroke-width="1" stroke-dasharray="5 4" opacity="0.35"/>
+    <path d="M 36 235 A 100 100 0 0 1 224 235" stroke-width="2" opacity="0.55" fill="none"/>
+    <line x1="36" y1="235" x2="50" y2="222" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="56" y1="180" x2="71" y2="175" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <line x1="130" y1="48" x2="130" y2="64" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <line x1="204" y1="180" x2="189" y2="175" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <line x1="224" y1="235" x2="210" y2="222" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="130" y1="155" x2="188" y2="92" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
+    <line x1="130" y1="155" x2="100" y2="163" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="130" cy="155" r="9" stroke-width="2.5" opacity="0.85"/>
+    <circle cx="130" cy="155" r="3" fill="currentColor" opacity="0.8"/>
+    <line x1="275" y1="55" x2="275" y2="255" stroke-width="1.2" opacity="0.4"/>
+    <line x1="275" y1="255" x2="430" y2="255" stroke-width="1.2" opacity="0.4"/>
+    <rect x="300" y="100" width="38" height="155" rx="3" stroke-width="1.5" opacity="0.58"/>
+    <rect x="358" y="155" width="38" height="100" rx="3" stroke-width="2" opacity="0.85"/>
+    <line x1="275" y1="100" x2="283" y2="100" stroke-width="1.2" opacity="0.48"/>
+    <line x1="275" y1="155" x2="283" y2="155" stroke-width="1.2" opacity="0.48"/>
+    <line x1="275" y1="210" x2="283" y2="210" stroke-width="1.2" opacity="0.48"/>
+    <path d="M319 100 C335 120 345 135 377 155" stroke-width="1" stroke-dasharray="4 3" opacity="0.4" fill="none"/>
+  </svg>
 </section>
 
 <section class="page-features reveal">
