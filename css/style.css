@@ -546,11 +546,11 @@ h1 em {
 /* Tornillo sin fin hero image — visible a la derecha en desktop, oculto en móvil */
 .hero-visual {
   position: absolute;
-  right: 5vw;
+  right: 14vw;
   top: 50%;
   transform: translateY(-50%);
-  width: 38vw;
-  max-width: 520px;
+  width: 44vw;
+  max-width: 600px;
   opacity: 1;
   pointer-events: none;
   z-index: 0;
