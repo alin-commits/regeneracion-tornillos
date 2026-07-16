@@ -1303,6 +1303,12 @@ footer a:hover {
 .page-hero-inner {
   position: relative;
   z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.page-hero-inner .btn-primary {
+  margin-top: 2.5rem;
 }
 
 .page-hero-visual {
@@ -1322,6 +1328,8 @@ footer a:hover {
 .page-body {
   padding: 5rem 5vw;
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-body h2 {
@@ -1371,6 +1379,9 @@ footer a:hover {
   letter-spacing: 0.04em;
   color: var(--white);
   margin-bottom: 2.5rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .faq-list {
@@ -1378,6 +1389,8 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── STATS ROW (hero) ── */
@@ -1419,12 +1432,17 @@ footer a:hover {
   letter-spacing: 0.04em;
   color: var(--white);
   margin-bottom: 2.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .feature-block {
   background: var(--ink2);
@@ -1578,6 +1596,37 @@ footer a:hover {
   letter-spacing: 0.04em;
   color: var(--white);
   margin-bottom: 2.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── PAGE SECTION CENTERING ── */
+.page-features > .section-tag,
+.page-faq > .section-tag,
+.page-related > .section-tag {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-related .services-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact > .section-tag,
+#contact > h2 {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact .contact-layout {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .service-card {
@@ -2276,7 +2325,8 @@ details[open] .phase-chevron {
     max-height: 30px;
   }
 
-  .services-grid {
+  .services-grid,
+  .page-related .services-grid {
     grid-template-columns: 1fr;
   }
 
