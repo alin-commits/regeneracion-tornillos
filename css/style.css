@@ -543,8 +543,7 @@ h1 em {
   transform: translateX(4px);
 }
 
-/* Rotor / tornillo sin fin decorativo del hero.
-   z-index bajo para quedar detrás del contenido (.hero-content tiene z-index:2). */
+/* Tornillo sin fin hero image — visible a la derecha en desktop, oculto en móvil */
 .hero-visual {
   position: absolute;
   right: 5vw;
@@ -552,7 +551,7 @@ h1 em {
   transform: translateY(-50%);
   width: 38vw;
   max-width: 520px;
-  opacity: 0.12;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }
@@ -2284,12 +2283,11 @@ details[open] .phase-chevron {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Rotor: se agranda y se atenúa aún más para no competir con el texto */
   .hero-visual {
     right: -5vw;
-    width: 55vw;
+    width: 45vw;
     max-width: 420px;
-    opacity: 0.08;
+    opacity: 1;
   }
 
   .page-hero-visual {
@@ -2340,14 +2338,8 @@ details[open] .phase-chevron {
     max-height: 32px;
   }
 
-  /* Rotor: pasa a fondo centrado, muy tenue, detrás del texto */
   .hero-visual {
-    right: 50%;
-    top: 62%;
-    transform: translate(50%, -50%);
-    width: 80vw;
-    max-width: 340px;
-    opacity: 0.06;
+    display: none;
   }
 
   .page-hero-visual {
@@ -2486,12 +2478,8 @@ details[open] .phase-chevron {
     max-height: 18px;
   }
 
-  /* Rotor: aún más pequeño y discreto en pantallas muy estrechas */
   .hero-visual {
-    width: 70vw;
-    max-width: 260px;
-    top: 58%;
-    opacity: 0.05;
+    display: none;
   }
 
   .page-hero-visual {
