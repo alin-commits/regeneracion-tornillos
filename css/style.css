@@ -1908,6 +1908,30 @@ footer a:hover {
   box-shadow: 0 14px 36px rgba(234, 67, 53, 0.6);
 }
 
+.cst-floating-email::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(234, 67, 53, 0.45);
+  animation: cst-email-pulse 1.8s infinite;
+}
+
+@keyframes cst-email-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
 /* ───────────── QUÉ ES ───────────── */
 
 #que-es {
