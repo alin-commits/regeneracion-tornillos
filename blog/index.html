@@ -174,9 +174,14 @@
 
 <main>
   <section class="blog-listing">
+    <div class="blog-filter-bar">
+      <span class="blog-filter-label">Ordenar:</span>
+      <button class="blog-sort-btn active" data-sort="desc">↓ Más reciente</button>
+      <button class="blog-sort-btn" data-sort="asc">↑ Más antiguo</button>
+    </div>
     <div class="blog-grid">
 
-      <a class="blog-card reveal" href="aceite-compresor-tornillo-tipos-intervalos-vida-util.html">
+      <a class="blog-card reveal" data-date="2026-07-20" href="aceite-compresor-tornillo-tipos-intervalos-vida-util.html">
         <div class="blog-card-header">
           <span class="blog-tag">Mantenimiento</span>
           <span class="blog-read-time">7 min lectura</span>
@@ -189,7 +194,7 @@
         </div>
       </a>
 
-      <a class="blog-card reveal" href="vida-util-tornillo-compresor-cuando-regenerar.html">
+      <a class="blog-card reveal" data-date="2026-07-10" href="vida-util-tornillo-compresor-cuando-regenerar.html">
         <div class="blog-card-header">
           <span class="blog-tag">Mantenimiento</span>
           <span class="blog-read-time">8 min lectura</span>
@@ -202,6 +207,11 @@
         </div>
       </a>
 
+    </div>
+    <div class="blog-pagination" id="blogPagination">
+      <button class="blog-page-btn" id="blogPrevBtn">← Anterior</button>
+      <span class="blog-page-info" id="blogPageInfo"></span>
+      <button class="blog-page-btn" id="blogNextBtn">Siguiente →</button>
     </div>
   </section>
 </main>
@@ -249,6 +259,66 @@
         });
       });
     });
+  </script>
+
+  <script>
+  (function () {
+    var ITEMS_PER_PAGE = 2;
+    var currentPage = 1;
+    var sortOrder = 'desc';
+
+    var grid = document.querySelector('.blog-grid');
+    if (!grid) return;
+    var cards = Array.from(grid.querySelectorAll('.blog-card'));
+    var sortBtns = document.querySelectorAll('.blog-sort-btn');
+    var prevBtn = document.getElementById('blogPrevBtn');
+    var nextBtn = document.getElementById('blogNextBtn');
+    var pageInfo = document.getElementById('blogPageInfo');
+    var pagination = document.getElementById('blogPagination');
+
+    function getDate(card) { return card.dataset.date || '1970-01-01'; }
+
+    function sortCards() {
+      cards.sort(function (a, b) {
+        var da = new Date(getDate(a)), db = new Date(getDate(b));
+        return sortOrder === 'desc' ? db - da : da - db;
+      });
+      cards.forEach(function (c) { grid.appendChild(c); });
+    }
+
+    function renderPage() {
+      var total = Math.ceil(cards.length / ITEMS_PER_PAGE);
+      var start = (currentPage - 1) * ITEMS_PER_PAGE;
+      var end = start + ITEMS_PER_PAGE;
+      cards.forEach(function (card, i) {
+        var visible = i >= start && i < end;
+        card.style.display = visible ? '' : 'none';
+        if (visible) { card.classList.remove('visible'); setTimeout(function () { card.classList.add('visible'); }, 60); }
+      });
+      if (pageInfo) pageInfo.textContent = 'Página ' + currentPage + ' de ' + total;
+      if (prevBtn) prevBtn.disabled = currentPage <= 1;
+      if (nextBtn) nextBtn.disabled = currentPage >= total;
+      if (pagination) pagination.style.display = total <= 1 ? 'none' : 'flex';
+    }
+
+    function scrollToGrid() { window.scrollTo({ top: grid.getBoundingClientRect().top + window.pageYOffset - 120, behavior: 'smooth' }); }
+
+    sortCards();
+    renderPage();
+
+    sortBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        sortOrder = btn.dataset.sort;
+        currentPage = 1;
+        sortBtns.forEach(function (b) { b.classList.toggle('active', b === btn); });
+        sortCards();
+        renderPage();
+      });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { if (currentPage > 1) { currentPage--; renderPage(); scrollToGrid(); } });
+    if (nextBtn) nextBtn.addEventListener('click', function () { var total = Math.ceil(cards.length / ITEMS_PER_PAGE); if (currentPage < total) { currentPage++; renderPage(); scrollToGrid(); } });
+  })();
   </script>
 
 </body>

@@ -2342,6 +2342,87 @@ details[open] .phase-chevron {
   text-decoration: underline;
 }
 
+/* Blog filter bar & pagination */
+.blog-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.blog-filter-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink3);
+  margin-right: 0.25rem;
+}
+.blog-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--white-dim);
+  font-size: 0.82rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.blog-sort-btn:hover {
+  border-color: var(--blue-accent);
+  color: var(--blue-accent);
+}
+.blog-sort-btn.active {
+  border-color: var(--blue-accent);
+  color: var(--blue-accent);
+  background: rgba(0,107,255,0.08);
+}
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+.blog-page-btn {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--white-dim);
+  font-size: 0.85rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.blog-page-btn:hover:not(:disabled) {
+  border-color: var(--blue-accent);
+  color: var(--blue-accent);
+}
+.blog-page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.blog-page-info {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink3);
+  min-width: 7rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blog-listing {
+    max-width: 1100px;
+  }
+}
+
 /* ── Article ── */
 .article-breadcrumb {
   font-family: 'IBM Plex Mono', monospace;
