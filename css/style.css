@@ -1452,6 +1452,12 @@ footer a:hover {
   transition: border-color 0.2s;
 }
 .feature-block:hover { border-color: var(--page-accent, rgba(0,157,225,0.4)); }
+
+@media (min-width: 1025px) {
+  #critical-phases-grid .feature-block:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
 .feature-icon {
   width: 40px;
   height: 40px;
